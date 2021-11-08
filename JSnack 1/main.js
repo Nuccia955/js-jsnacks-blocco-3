@@ -13,13 +13,24 @@
 4. Creare un array di 10 giocatori di basket, con le regole sopra indicate
 5. Creare un nuovo array con i giocatori che hanno una media di punti superiore a 35 e la percentuale di successo per i tiri da 3 punti superiore all’80%. */
 
-const player = {};
+//4.
+const players = [
+    genNewPlayer('Michael', 'Jordan', 25),
+    genNewPlayer('Lebron', 'James', 22),
+    genNewPlayer('Karl', 'Malone', 30),
+    genNewPlayer('Shaquille', 'O’Neal', 20),
+    genNewPlayer('Magic', 'Johnson', 31),
+    genNewPlayer('Bill', 'Russell', 25),
+    genNewPlayer('Larry', 'Bird', 26),
+    genNewPlayer('MichKareem', 'Abdul-Jabbarael', 22),
+    genNewPlayer('Tim', 'Duncan', 18),
+    genNewPlayer('Kobe', 'Bryant', 16)
+]
 
+console.table(players);
 
-
-
-
-
+//3.
+players.forEach((element) => console.log(element.firstName, element.secondName, `, age: ${element.age}`, `, playerCode: ${element.playerCode}`))
 
 /*********
 *FUNCTIONS
@@ -32,6 +43,7 @@ function genRandUpperCaseLetter () {
     return String.fromCharCode(genRandNum(65, 90));
 }
 
+//2.1
 function genPlayerCode () {
     let playerCode = [];
     for (let i = 0; i < 3; i++) {
@@ -43,11 +55,23 @@ function genPlayerCode () {
     playerCode = playerCode.join('');
     return playerCode;
 }
-
+//2.1
 function genPointsAverage () {
     return genRandNum(0, 50);
 }
-
+//2.3
 function genSuccessPerCent () {
     return `${genRandNum(0, 100)}%`;
+}
+
+//1.
+function genNewPlayer (firstName, secondName, age) {
+    return {
+        playerCode: genPlayerCode(),
+        firstName: firstName,
+        secondName: secondName,
+        age: age,
+        pointsAverage: genPointsAverage(),
+        successPercentage: genSuccessPerCent(),
+    };
 }
