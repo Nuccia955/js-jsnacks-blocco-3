@@ -30,7 +30,14 @@ const players = [
 console.table(players);
 
 //3.
-players.forEach((element) => console.log(element.firstName, element.secondName, `, age: ${element.age}`, `, playerCode: ${element.playerCode}`))
+players.forEach((element) => console.log(element.firstName, element.secondName, `, age: ${element.age}`, `, playerCode: ${element.playerCode}`));
+
+//5.
+const bestPlayers = players.filter(element => {
+    return element.pointsAverage > 35 && parseInt(element.successPercentage.split('%')) > 80
+});
+
+console.log(bestPlayers);
 
 /*********
 *FUNCTIONS
@@ -61,7 +68,7 @@ function genPointsAverage () {
 }
 //2.3
 function genSuccessPerCent () {
-    return `${genRandNum(0, 100)}%`;
+    return genRandNum(0, 100);
 }
 
 //1.
@@ -72,6 +79,6 @@ function genNewPlayer (firstName, secondName, age) {
         secondName: secondName,
         age: age,
         pointsAverage: genPointsAverage(),
-        successPercentage: genSuccessPerCent(),
+        successPercentage: `${genSuccessPerCent()}%`,
     };
 }
