@@ -40,9 +40,14 @@ function genPlayerCode () {
     for (let i = 0; i < 3; i++) {
         playerCode.push(genRandNum(1, 9));
     }
-    console.log(playerCode)
     playerCode = playerCode.join('');
     return playerCode;
 }
 
-console.log(genPlayerCode());
+function genPointsAverage () {
+    return genRandNum(0, 50);
+}
+
+function genSuccessPerCent () {
+    return `${genRandNum(0, 100)}%`;
+}
