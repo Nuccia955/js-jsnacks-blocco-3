@@ -12,3 +12,37 @@
 3. Stampare Nome, cognome, età e codice giocatore.
 4. Creare un array di 10 giocatori di basket, con le regole sopra indicate
 5. Creare un nuovo array con i giocatori che hanno una media di punti superiore a 35 e la percentuale di successo per i tiri da 3 punti superiore all’80%. */
+
+const player = {};
+
+
+
+
+
+
+
+/*********
+*FUNCTIONS
+**********/
+function genRandNum (min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function genRandUpperCaseLetter () {
+    return String.fromCharCode(genRandNum(65, 90));
+}
+
+function genPlayerCode () {
+    let playerCode = [];
+    for (let i = 0; i < 3; i++) {
+        playerCode.push(genRandUpperCaseLetter());
+    }
+    for (let i = 0; i < 3; i++) {
+        playerCode.push(genRandNum(1, 9));
+    }
+    console.log(playerCode)
+    playerCode = playerCode.join('');
+    return playerCode;
+}
+
+console.log(genPlayerCode());
