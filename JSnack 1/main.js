@@ -14,18 +14,17 @@
 5. Creare un nuovo array con i giocatori che hanno una media di punti superiore a 35 e la percentuale di successo per i tiri da 3 punti superiore all’80%. */
 
 //4.
-const players = [
-    genNewPlayer('Michael', 'Jordan', 25),
-    genNewPlayer('Lebron', 'James', 22),
-    genNewPlayer('Karl', 'Malone', 30),
-    genNewPlayer('Shaquille', 'O’Neal', 20),
-    genNewPlayer('Magic', 'Johnson', 31),
-    genNewPlayer('Bill', 'Russell', 25),
-    genNewPlayer('Larry', 'Bird', 26),
-    genNewPlayer('MichKareem', 'Abdul-Jabbarael', 22),
-    genNewPlayer('Tim', 'Duncan', 18),
-    genNewPlayer('Kobe', 'Bryant', 16)
-]
+const namesPlayers = ['Michael', 'Lebron', 'Karl', 'Shaquille', 'Magic', 'Bill', 'Larry', 'MichKareem', 'Tim', 'Kobe' ];
+
+const secondNamesPlayers = ['Jordan', 'James', 'Malone', 'O’Neal', 'Johnson', 'Russell', 'Bird', 'Abdul-Jabbarael', 'Duncan', 'Bryant'];
+
+const agesPlayers = [25, 22, 30, 20, 31, 25, 26, 22, 18, 16];
+
+const players = [];
+
+for (let i = 0; i < namesPlayers.length; i++) {
+    players.push(genNewPlayer (`${namesPlayers[i]}`, `${secondNamesPlayers[i]}`, `${agesPlayers[i]}`));
+}
 
 console.table(players);
 
